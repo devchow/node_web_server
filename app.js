@@ -17,15 +17,18 @@ fs.readFile('index.html', function(error, data){
         // write content to the response body
         res.write(data)
     }
+    res.end()
+})
+//
 })
 
-res.end('<h1>Hello Server!</h1>')
-})
-
+// listen for requests
 server.listen(port, function(error){
     if(error){
+        // display the error message on the terminal
         console.log('Something went wrong', error)
     }else{
+        // display the message on the terminal
         console.log('Server is listening on port ' + port + " ✔")
     }
 })
